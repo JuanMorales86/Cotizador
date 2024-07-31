@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Cotizador web inmobiliario para calcular precios de propiedades">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://drive.google.com/file/d/1GLx5PELqOlvRlweigyknetBg4frwp3rt/view?usp=drive_link"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://drive.google.com/uc?id=1GLx5PELqOlvRlweigyknetBg4frwp3rt">
+    <title>Cotizador</title>
+
+</head>
+
+<body>
+    <div class="contanier">
+
+        <section class="container-title">
+            <img src="./assets/img/629614e0cb439__838x390.jpg" alt="Zona Prop imagen principal" class="img-banner">
+            <h1 class="h1-title">Cotizador</h1>
+        </section>
+
+        <section class="container-form">
+            <div class="inner-container">
+                <form action="/stylesheetgoogle" method="POST" class="form">
+
+                    <div class="prime-list">
+                        <label for="lista">Seleccionar <br>Listas</br></label>
+                        <select name="lista" id="lista" placeholder="Selecciona Lista">
+                        </select>
+                    </div>
+
+                    <div id='prime-table' class="prime-table">
+                        <div class="label-row">
+                            <label for="cantidad">Cantidad</label>
+                            <label for="productos">Productos</label>
+                            <label for="precio">Precio</label>
+                            <label for="descuento">%Descuento</label>
+                            <label for="preciocdes">PrecioCDesc</label>
+                            <label for="preciototal">Totales</label>
+                        </div>
+                        <div class="input-row">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+        <div class="apigooglesheets">
+            <p>Sheets API Quickstart</p>
+
+            <!--Add buttons to initiate auth sequence and sign out-->
+            <button id="authorize_button" class="boton-lista" onclick="handleAuthClick()">Authorize</button>
+            <button id="signout_button" class="boton-lista" onclick="handleSignoutClick()">Sign Out</button>
+
+
+
+
+            <!-- Authentificaciones -->
+            <script async defer id="gapi" src="https://apis.google.com/js/api.js"></script>
+            <script async defer id="gis" src="https://accounts.google.com/gsi/client"></script>
+            <script async defer src="auth.js"></script>
+
+            <!--Manejo de la hoja-->
+            <script async defer src="sheets.js">
+                document.addEventListener('DOMContentLoaded', function () {
+                    getListas().then(() => {
+                        initializeRows(5);
+                    });
+                });
+            </script>
+
+
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+
+
+</html>
+
+<!-- link publicacion libro sheet : 
+ https://docs.google.com/spreadsheets/d/e/2PACX-1vTA2Zw7K_L0-wrjre23P_BvW9u6FXUWDbeoOsH6s5sCqRL-Qif74xLTWJU2tkzmC_8YbUUTyHixsYdT/pubhtml -->
+
+<!-- Api key del proyecto CotizadorZonaprop de la habilitacion de la api googlesheets : AIzaSyDRnn3AI0WMUQmw64bWtFBitjxKNcZ3R8M -->

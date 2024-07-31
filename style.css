@@ -1,0 +1,303 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+:root {
+    --title-color: #333333;
+    --text-color: #666666;
+    --accent-color: #e33333;
+    --background-color: #ffffff;
+    --borderR10px: 10px;
+    --roboto-regular: "Roboto", sans-serif;
+    --roboto-font-style: normal;
+    --font-size-title: 1.8rem;
+    --font-size-2title: 1.3rem;
+    --font-size-text: 1rem;
+    --font-size-text2: 0.75rem;
+    --font-weight-title: bold;
+    /* 700*/
+    --font-weight-2title: semi-bold;
+    /* 600 */
+    --font-weight-text: regular;
+    /* 400 */
+
+}
+
+
+
+html,
+body {
+    background-color: var(--background-color);
+    font-family: var(--roboto-regular);
+    color: var(--text-color);
+    width: 100%;
+    height: 100%;
+    padding: 0.2rem 0.2rem;
+}
+
+.h1-title {
+    color: var(--title-color);
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+    text-decoration: none;
+    line-height: 1.2;
+
+}
+
+
+.apigooglesheets {
+    /* boton authenticador de google */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .boton-lista {
+        display: inline-block;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 8px;
+        background-color: #e33333;
+        color: #ffffff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 120px;
+        height: 70px;
+    }
+
+    & .boton-lista:hover {
+        background-color: #2980b9;
+    }
+
+    & .boton-lista:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+    }
+
+    & .boton-lista:active {
+        transform: translateY(1px);
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.container-title {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    border: solid 2px black;
+    width: 100%;
+    height: 50vh;
+    background-color: black;
+
+
+    & .img-banner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: solid 2px black;
+        object-fit: contain;
+    }
+
+   
+}
+
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    border: solid 2px black;
+    width: 100%;
+    height: 50%;
+    background-color: black;
+    color: white;
+    /* text-align: center; */
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--roboto-regular);
+    font-size: var(--font-size-2title);
+    font-weight: var(--font-weight-title);
+}
+
+.prime-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: auto;
+
+    & label {
+        color: var(--text-color);
+
+
+    }
+
+    & select {
+
+        flex-grow: 0;
+        width: 150px;
+        height: 2.5rem;
+        /* border: #e33333 solid 2px; */
+        border-radius: 10px;
+        margin: 0 1rem;
+        text-align: center;
+        font-weight: var(--font-weight-text);
+        font-size: var(--font-size-text);
+        transition: border-color 0.3s ease;
+        /* transicion */
+
+        & option {
+            color: var(--title-color);
+            font-weight: var(--font-weight-text);
+        }
+    }
+}
+.prime-table {
+    margin-top: 2rem;
+    width: 100%;
+    height: 500px;
+    overflow: auto;
+    border: 2px solid black;
+    border-radius: var(--borderR10px);
+    align-content: center;/*alinear al centro verticalmente*/
+
+}
+
+.prime-table .label-row,
+.prime-table .input-row {
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    min-width: 100%;
+    /*Agregar todo el ancho del contenedor esto hace q el scroll corra por todo el espacio interior completo*/
+}
+
+.prime-table .label-row label,
+.prime-table .input-row select,
+.prime-table .input-row input {
+    flex: 0 0 auto;
+    /*Alineacion grow: 1 shrink: 0 basis: auto*/
+    min-width: 220px;
+    /**tamano minimo*/
+    margin: 0 0.5rem;
+    text-align: center;
+    white-space: nowrap;
+    /*Evita que que el texto se corte o se muestren puntos suspensivos si no entra completamente*/
+    overflow: hidden;
+    /*ocultar el desbordamiento*/
+    text-overflow: ellipsis;
+    /*forma del overflow*/
+}
+
+.input-row {
+    margin-top: 1rem;
+    
+}
+
+.prime-table .input-row select,
+.prime-table .input-row input {
+    height: 2rem;
+    border-radius: 10px;
+    font-weight: var(--font-size-text);
+    font-size: var(--font-size-text);
+}
+
+.prime-table .input-row input {
+    background: var(--background-color);
+    border: 1px solid #ccc;
+    cursor: default;
+}
+
+.prime-table .label-row label {
+    color: var(--text-color);
+}
+
+@media screen and (260 <=width <=768) {
+
+    .label-row,
+    .input-row {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .label-row label,
+    .input-row select,
+    .input-row input {
+        flex: 100%;
+        margin: 0.25rem 0;
+    }
+}
+
+.input-rowtotal{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 100%;
+}
+
+.total-column{
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    min-width: 220px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: var(--font-size-2title);
+    font-size: var(--font-size-2title);
+    color: var(--title-color);
+    border: 2px solid black;
+    border-radius: var(--borderR10px);
+    margin: 2rem 0.5rem;
+    padding: 1rem;
+    background-color: #f2f2f2;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.total-column label {
+    margin-bottom: 0.5rem;
+}
+
+.total-column input{
+    width: 100%;
+}
