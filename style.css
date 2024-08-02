@@ -13,6 +13,7 @@
     --borderR10px: 10px;
     --roboto-regular: "Roboto", sans-serif;
     --roboto-font-style: normal;
+    --font-size-banner: 3rem;
     --font-size-title: 1.8rem;
     --font-size-2title: 1.3rem;
     --font-size-text: 1rem;
@@ -39,17 +40,21 @@ body {
 }
 
 .h1-title {
-    color: var(--title-color);
+    color: var(--background-color);
     width: 100%;
-    text-align: center;
-    margin: 1rem 0;
-    padding: 1rem 0;
+    height: 100%;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     letter-spacing: 2px;
     text-decoration: none;
     line-height: 1.2;
-
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: var(--font-size-banner);
+    font-weight: var(--font-weight-title);
+    margin: 0 4rem;
 }
 
 
@@ -110,12 +115,15 @@ body {
 
 
     & .img-banner {
-        background-image: url(https://i.imgur.com/Ntf7xqw.png);
+        background-image: url(assets/img/64e4aef3b04f5__838x390.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         position: absolute;
         width: 100%;
         height: 100%;
         border: solid 2px black;
-        object-fit: cover;
+      
     }
 
    

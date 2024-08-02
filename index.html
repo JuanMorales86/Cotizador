@@ -18,7 +18,7 @@
     <div class="contanier">
 
         <section class="container-title">
-            <img  alt="Zona Prop imagen principal" class="img-banner">
+            <img  class="img-banner">
             <h1 class="h1-title">Cotizador</h1>
         </section>
 
@@ -30,6 +30,7 @@
                         <label for="lista">Seleccionar <br>Listas</br></label>
                         <select name="lista" id="lista" placeholder="Selecciona Lista">
                         </select>
+                        
                     </div>
 
                     <div id='prime-table' class="prime-table">
@@ -49,30 +50,19 @@
 
         </section>
 
-        <div class="apigooglesheets">
-            <p>Sheets API Quickstart</p>
+  
 
-            <!--Add buttons to initiate auth sequence and sign out-->
-            <button id="authorize_button" class="boton-lista" onclick="handleAuthClick()">Authorize</button>
-            <button id="signout_button" class="boton-lista" onclick="handleSignoutClick()">Sign Out</button>
+        <script defer src="/APIs.js">
+        </script>
 
-
-
-
-            <!-- Authentificaciones -->
-            <script async defer id="gapi" src="https://apis.google.com/js/api.js"></script>
-            <script async defer id="gis" src="https://accounts.google.com/gsi/client"></script>
-            <script async defer src="auth.js"></script>
-
-            <!--Manejo de la hoja-->
-            <script async defer src="sheets.js">
-                document.addEventListener('DOMContentLoaded', function () {
-                    getListas().then(() => {
-                        initializeRows(5);
-                    });
-                });
-            </script>
-
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            getListas().then(() => {
+                
+            });
+            initializeEventListeners();
+            });
+        </script>
 
         </div>
 
